@@ -10,8 +10,8 @@
 // ---- Thông tin chung ----
 export const personal = {
   name: 'Đào Hương Giang',
-  // Ảnh: bỏ vào public/ rồi để tên ở đây, ví dụ '/avatar.jpg'. Trống = hiện chữ cái đầu.
-  avatar: '',
+  // Ảnh: bỏ file vào public/ (đặt tên avatar.jpg). Trống = hiện chữ cái đầu.
+  avatar: '/avatar.jpg',
   email: 'daohuonggiang389@gmail.com',
   phone: '0387478880',
   facebook: 'https://www.facebook.com/daohuonggianggg',

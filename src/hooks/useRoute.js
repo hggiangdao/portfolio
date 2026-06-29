@@ -1,18 +1,22 @@
 import { useEffect, useState } from 'react'
 
-// Đọc route từ hash URL: #tester / #devops. Khác đi -> null (trang chọn hồ sơ)
+// Đọc route theo đường dẫn (path) — KHÔNG dùng #.
+//   /            -> tester (mặc định)
+//   /tester      -> tester
+//   /devops      -> devops
 function getRoute() {
-  const h = window.location.hash.replace(/^#\/?/, '')
-  return h === 'tester' || h === 'devops' ? h : null
+  const p = window.location.pathname.replace(/\/+$/, '').toLowerCase()
+  if (p === '/devops') return 'devops'
+  return 'tester'
 }
 
 export default function useRoute() {
   const [route, setRoute] = useState(getRoute())
 
   useEffect(() => {
-    const onHash = () => setRoute(getRoute())
-    window.addEventListener('hashchange', onHash)
-    return () => window.removeEventListener('hashchange', onHash)
+    const onPop = () => setRoute(getRoute())
+    window.addEventListener('popstate', onPop)
+    return () => window.removeEventListener('popstate', onPop)
   }, [])
 
   return route

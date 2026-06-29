@@ -1,0 +1,140 @@
+/* ============================================================
+   DESIGN TOKENS — bảng màu warm editorial, phẳng (không gradient)
+   ============================================================ */
+:root {
+  /* màu nhấn: terracotta trầm, dùng tiết chế */
+  --accent: #b04a2f;
+  --accent-soft: #f4e9e3;
+  --accent-hover: #9a3d25;
+
+  /* nền giấy ấm + mực gần đen */
+  --bg: #fcfbf9;
+  --bg-alt: #f5f2ec;
+  --surface: #ffffff;
+  --border: #e7e2d9;
+
+  --text: #1c1b19;
+  --text-muted: #6b665d;
+  --text-faint: #9c968b;
+
+  --radius: 10px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 1px 2px rgba(28, 27, 25, 0.05);
+  --shadow-md: 0 12px 32px rgba(28, 27, 25, 0.1);
+
+  --max-width: 1120px;
+
+  /* serif biên tập cho tiêu đề, sans sạch cho phần thân */
+  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section__title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.6vw, 38px);
+  font-weight: 500;
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
+  line-height: 1.12;
+  margin-bottom: 10px;
+}
+
+.section__subtitle {
+  color: var(--text-muted);
+  margin-bottom: 36px;
+  font-size: 16px;
+  max-width: 560px;
+}
+
+/* nhãn nhỏ kiểu biên tập: chữ hoa, giãn cách nhẹ */
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 14px;
+}
+
+/* ============================================================
+   FADE-IN khi cuộn
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

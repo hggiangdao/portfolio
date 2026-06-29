@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
 
 // Đọc route theo đường dẫn (path) — KHÔNG dùng #.
-//   /            -> tester (mặc định)
+//   /            -> null  (trang home chọn hồ sơ)
 //   /tester      -> tester
 //   /devops      -> devops
 function getRoute() {
   const p = window.location.pathname.replace(/\/+$/, '').toLowerCase()
+  if (p === '/tester') return 'tester'
   if (p === '/devops') return 'devops'
-  return 'tester'
+  return null
 }
 
 export default function useRoute() {

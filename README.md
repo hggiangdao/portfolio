@@ -3,14 +3,15 @@
 Trang portfolio cá nhân thay thế CV, làm bằng **React + Vite**.
 Có **2 hồ sơ độc lập** dùng 2 đường link riêng để ứng tuyển 2 nơi khác nhau:
 
-| Hồ sơ | Đường link | Màu nhấn |
+| Trang | Đường link | Màu nhấn |
 |-------|-----------|----------|
-| Tester (mặc định) | `…/` | terracotta |
+| Home (chọn hồ sơ) | `…/` | — |
+| Tester | `…/tester` | terracotta |
 | DevOps | `…/devops` | teal (xanh) |
 
-Ví dụ sau khi đưa lên mạng: `https://ten-cua-ban.vercel.app` gửi cho chỗ tuyển
-Tester, `…/devops` gửi cho chỗ tuyển DevOps. Người nhận chỉ thấy đúng hồ sơ đó,
-không thấy hồ sơ kia. (File `vercel.json` giúp đường dẫn `/devops` không bị 404.)
+Ví dụ sau khi đưa lên mạng: `…/tester` gửi cho chỗ tuyển Tester, `…/devops` gửi
+cho chỗ tuyển DevOps. Trang `…/` là nơi chọn hồ sơ. (File `vercel.json` giúp các
+đường dẫn `/tester`, `/devops` không bị 404.)
 
 ## Chạy thử trên máy
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { personal, profiles, education, testimonials } from './data/profiles.js'
 import useRoute from './hooks/useRoute.js'
+import Landing from './components/Landing.jsx'
 import Sidebar from './components/Sidebar.jsx'
 import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
@@ -25,6 +26,9 @@ export default function App() {
     const label = route ? profiles[route].label : 'Portfolio'
     document.title = `${personal.name} — ${label}`
   }, [route])
+
+  // Vào '/' (route = null) -> hiện trang home chọn hồ sơ
+  if (!route) return <Landing />
 
   const profile = profiles[route]
 

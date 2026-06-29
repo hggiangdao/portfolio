@@ -31,7 +31,7 @@ export default function Landing() {
             <a
               key={c.key}
               className="lcard"
-              href={`#${c.key}`}
+              href={`/${c.key}`}
               style={{ '--accent': c.accent, '--accent-soft': c.accentSoft }}
             >
               <span className="lcard__label">{c.label}</span>
